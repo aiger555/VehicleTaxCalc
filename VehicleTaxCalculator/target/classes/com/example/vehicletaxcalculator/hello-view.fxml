@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+
+<?import javafx.collections.FXCollections?>
+<?import com.example.vehicletaxcalculator.VehicleType?>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.vehicletaxcalculator.HelloController">
+    <children>
+        <Label style="-fx-font-weight: bold;" text="Student ID: 230104025&#10;Name Surname: Aigerim Nuralieva" />
+        <HBox alignment="CENTER_LEFT" spacing="10.0">
+            <children>
+                <VBox spacing="5.0">
+                    <children>
+                        <Label text="Vehicle Type:" />
+                        <ChoiceBox fx:id="vehicleTypeChoice" prefWidth="150.0">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <VehicleType fx:constant="CAR" />
+                                    <VehicleType fx:constant="BUS" />
+                                    <VehicleType fx:constant="TRUCK" />
+                                </FXCollections>
+                            </items>
+                        </ChoiceBox>
+                    </children>
+                </VBox>
+                <VBox spacing="5.0">
+                    <children>
+                        <Label text="Engine Capacity (CC):" />
+                        <TextField fx:id="engineCapacityField" prefWidth="100.0" />
+                    </children>
+                </VBox>
+                <VBox spacing="5.0">
+                    <children>
+                        <Label text="Manufacture Year:" />
+                        <TextField fx:id="manufactureYearField" prefWidth="100.0" />
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+        <Button text="Calculate Tax" onAction="#calculateTax" />
+        <Label fx:id="resultLabel" />
+    </children>
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+    </padding>
+</VBox>
